@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+
+public class Main{
+
+public static void main(String[] args) throws Exception {
+    // write your code here
+    Scanner scn=new Scanner(System.in);
+    int n=scn.nextInt();
+    int[]a=new int[n];
+    
+    for(int i=0;i<a.length;i++){
+        a[i]=scn.nextInt();
+    }
+    int Span=getSpan(a);
+    System.out.println(Span);
+ }
+ public static int getSpan(int[] b){
+     int max=getMax(b);
+     int min=getMin(b);
+     int Span=max-min;
+    return Span;
+ }
+ public static int getMax(int[] c){
+     int max=c[0];
+     for(int i=1;i<c.length;i++){
+         if(max<c[i]){
+             max=c[i];
+         }
+     }
+     return max;
+ }
+ public static int getMin(int[] d){
+     int min=d[0];
+     for(int i=1;i<d.length;i++){
+         if(min>d[i]){
+             min=d[i];
+         }
+     }
+     return min;
+ }
+
+}
