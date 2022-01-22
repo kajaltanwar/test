@@ -1,0 +1,51 @@
+import java.io.*;
+import java.util.*;
+
+public class Main{
+
+public static void main(String[] args) throws Exception {
+    // write your code here
+    Scanner scn=new Scanner(System.in);
+    int n=scn.nextInt();
+    int ar[]=new int[n];
+    
+    for(int i=0;i<n;i++){
+        ar[i]=scn.nextInt();
+    }
+    
+    int total=(int)Math.pow(2,n);
+    
+    for(int deci=0;deci<total;deci++){
+        int bin=d2b(deci);
+        
+        int div=(int)Math.pow(10,n-1);
+        for(int i=0;i<n;i++){
+            int bit=bin/div;  //0,1
+            
+            if(bit==0){
+                System.out.print("-\t");
+            }
+            else{
+                System.out.print(ar[i] +"\t");
+            }
+            bin=bin%div;
+            div=div/10;
+        }
+        System.out.println("");
+    }
+
+}
+    
+    public static int d2b(int d){
+        int ans=0;
+        int pow=1;
+        while(d!=0){
+            int dig=d%2;
+            d=d/2;
+            ans=ans+dig*pow;
+            pow=pow*10;
+            
+        }
+        return ans;
+    }
+} 
