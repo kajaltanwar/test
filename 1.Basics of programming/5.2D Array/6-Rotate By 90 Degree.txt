@@ -1,0 +1,55 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception {
+        // write your code here
+        Scanner scn=new Scanner(System.in);
+        int n=scn.nextInt();
+        int ar[][]=new int[n][n];
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                ar[i][j]=scn.nextInt();
+            }
+        }
+        
+        for(int i=1;i<n;i++){
+            int j=0;
+            while(i!=j){
+                //swap i,j   j,i
+                int temp=ar[i][j];
+                ar[i][j]=ar[j][i];
+                ar[j][i]=temp;
+                j++;
+            }
+        }
+        
+        for(int r=0;r<n;r++){
+            int i=0;
+            int j=n-1;
+            while(i<j){
+                //reverse row
+                int temp=ar[r][i];
+                ar[r][i]=ar[r][j];
+                ar[r][j]=temp;
+                i++;
+                j--;
+            }
+        }
+        
+        display(ar);
+        
+    }
+
+    public static void display(int[][] arr){
+        for(int i = 0; i < arr.length; i++){
+            for(int j = 0; j < arr[0].length; j++){
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+}
