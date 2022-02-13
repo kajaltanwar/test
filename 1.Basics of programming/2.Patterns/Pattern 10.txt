@@ -1,0 +1,36 @@
+import java.util.*;
+
+public class Main{
+
+public static void main(String[] args) {
+    Scanner scn = new Scanner(System.in);
+
+     // write ur code here
+     int n=scn.nextInt();
+     int Ospaces=n/2;
+     int Ispaces=-1;
+     for(int i=1;i<=n;i++){
+         for(int j=1;j<=Ospaces;j++){
+             System.out.print("	");
+         }
+         System.out.print("*	");
+         for(int j=1;j<=Ispaces;j++){
+             System.out.print("	");
+         }
+         if(i>1&&i<n){
+             System.out.print("*	");
+         }
+         if(i<=n/2){
+             Ospaces--;
+             Ispaces+=2;
+         }
+         else{
+             Ospaces++;
+             Ispaces-=2;
+         }
+         System.out.println();
+     }
+     
+
+ }
+}
