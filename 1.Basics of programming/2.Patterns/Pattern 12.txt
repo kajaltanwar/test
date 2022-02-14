@@ -1,0 +1,26 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scn = new Scanner(System.in);
+
+        // write ur code here
+        int n=scn.nextInt();
+        int nst=1;
+        int a=0;
+        int b=1;
+        int c=a+b;
+        for(int r=1;r<=n;r++){
+            for(int val=1;val<=nst;val++){
+                System.out.print(a+"	");
+                a=b;
+                b=c;
+                c=a+b;
+            }
+            nst++;
+            System.out.println("");
+        }
+
+    }
+}
