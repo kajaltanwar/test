@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Main{
+
+public static void main(String[] args) {
+    Scanner scn = new Scanner(System.in);
+     // write ur code here
+     int n=scn.nextInt();
+     int Spaces=2*n-3;
+     int Stars=1;
+     
+     for(int i=1;i<=n;i++){
+         int Count=1;
+         
+         //Star loop
+         for(int j=1;j<=Stars;j++){
+             System.out.print(Count+"	");
+             Count++;
+         }
+         //Spaces loop
+         for(int j=1;j<=Spaces;j++){
+             System.out.print("	");
+         }
+         //Star loop
+         if(i==n){
+             Stars--;
+             Count--;
+         }
+         for(int j=1;j<=Stars;j++){
+             Count--;
+             System.out.print(Count+"	");
+         }
+         Stars++;
+         Spaces-=2;
+         System.out.println("");
+         
+     }
+    
+ }
+}
