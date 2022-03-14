@@ -18,7 +18,6 @@ public class Main {
     }
 
     // set is the subset
-    // sos is sum of subset
     // tar is target
     public static void printTargetSumSubsets(int[] arr, int idx, String set, int tar) {
         if(idx==arr.length){
