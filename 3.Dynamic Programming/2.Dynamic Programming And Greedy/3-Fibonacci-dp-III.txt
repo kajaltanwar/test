@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Main{
+
+public static void main(String[] args) throws Exception {
+    // write your code here
+    Scanner scn = new Scanner(System.in);
+    int n = scn.nextInt();
+   
+   int qb[] = new int[n+1];
+   System.out.println(fibT(n , qb));
+}
+ 
+public static int fibT(int n , int qb[]){
+    for(int i=0 ; i<=n ; i++){
+    if(i==0 || i==1){
+        qb[i] = i;
+        continue;
+    }
+    
+    int num1 = qb[i-1];
+    int num2 = qb[i-2];
+    
+    int nthfib = num1 + num2;
+    
+    qb[i] = nthfib;
+    continue;
+    }
+    return qb[n];
+} 
+
+}
